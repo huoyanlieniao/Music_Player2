@@ -9,14 +9,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.music_player.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Music_Adapter extends BaseAdapter {
-    private List<Music> music;
+    private ArrayList<Music> music;
     private Context context;
 
 
-    public Music_Adapter(List<Music> music, Context context) {
+    public Music_Adapter(ArrayList<Music> music, Context context) {
         this.music = music;
         this.context = context;
     }
@@ -42,7 +43,7 @@ public class Music_Adapter extends BaseAdapter {
         if(convertView == null){
             //视图为空
             //创建视图
-            convertView = LayoutInflater.from(context).inflate(R.layout.music_list_adapter,parent,false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.music_list_layout,parent,false);
             viewHolder = new ViewHolder();
             //获取控件
             viewHolder.imageView= (ImageView) convertView.findViewById(R.id.Music_Picture);
