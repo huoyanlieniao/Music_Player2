@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Music_Adapter extends BaseAdapter {
-    private ArrayList<Music> music;
+    private ArrayList<Music> music=new ArrayList<>();
     private Context context;
 
 
@@ -68,6 +68,7 @@ public class Music_Adapter extends BaseAdapter {
         TextView music_title;
         TextView music_author;
         TextView music_time;
+
     }
 
 }

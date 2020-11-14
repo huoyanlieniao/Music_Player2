@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.provider.MediaStore;
 import com.example.music_player.Music_List.Music;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 public class Music_Get {
@@ -12,6 +13,8 @@ public class Music_Get {
 
     public static ArrayList<Music> GetMusic(Context context) {
         musicArrayList=new ArrayList<Music>();
+
+        //获取本地音乐，获取可以获取到但是在之后的播放出了问题，所以改为了获取raw
         Cursor cursor = context.getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
                 , null, null, null, MediaStore.Audio.AudioColumns.IS_MUSIC);
 
@@ -29,6 +32,8 @@ public class Music_Get {
 
         }
         cursor.close();
+
+
         return musicArrayList;
     }
 
